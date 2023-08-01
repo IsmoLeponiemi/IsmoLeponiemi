@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+</head>
+
+<body>
+	<div class="container">
+		<h2>Uusi käyttäjä</h2>
+		<br>
+		<form action="#" th:action="@{/user}" th:object="${userItem}"
+			method="POST">
+			<table class="table table-bordered table-striped">
+				<tbody>
+					<tr>
+						<td><label for="name"><b>Käyttäjän nimi</b></label><input
+							class="form-control" type="text" th:field="*{name}" id="name"
+							placeholder="Käyttäjän nimi" required></td>
+						<td><label for="name"><b>Käyttäjätunnus</b></label><input
+							class="form-control" type="text" th:field="*{username}"
+							id="username" placeholder="Käyttäjätunnus" required></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>Sähköposti</b></label><input
+							class="form-control" type="text" th:field="*{email}" id="email"
+							placeholder="Sähköposti" required></td>
+						<td><label for="name"><b>Puhelinnumero</b></label><input
+							class="form-control" type="text" th:field="*{phone}" id="phone"
+							placeholder="Puhelinnumero" required></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>Katu</b></label><input
+							class="form-control" type="text" th:field="*{street}" id="street"
+							placeholder="Katu"></td>
+						<td><label for="name"><b>Asunto</b></label><input
+							class="form-control" type="text" th:field="*{suite}" id="suite"
+							placeholder="Asunto"></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>Postinumero</b></label><input
+							class="form-control" type="text" th:field="*{zipcode}"
+							id="zipcode" placeholder="Postinumero"></td>
+						<td><label for="name"><b>Postitoimipaikka</b></label><input
+							class="form-control" type="text" th:field="*{city}" id="city"
+							placeholder="Postitoimipaikka"></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>Leveyspiiri</b></label><input
+							class="form-control" type="text" th:field="*{lat}" id="lat"
+							placeholder="Leveyspiiri"></td>
+						<td><label for="name"><b>Pituuspiiri</b></label><input
+							class="form-control" type="text" th:field="*{lng}" id="lng"
+							placeholder="Pituuspiiri"></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>web-osoite</b></label><input
+							class="form-control" type="text" th:field="*{website}"
+							id="website" placeholder="web-osoite"></td>
+						<td><label for="name"><b>Yrityksen nimi</b></label><input
+							class="form-control" type="text" th:field="*{companyname}"
+							id="companyname" placeholder="Yrityksen nimi"></td>
+					</tr>
+					<tr>
+						<td><label for="name"><b>Yrityksen iskulause</b></label><input
+							class="form-control" type="text" th:field="*{catchPhrase}"
+							id="catchPhrase" placeholder="Yrityksen iskulause"></td>
+						<td><label for="name"><b>Yrityksen toimiala</b></label><input
+							class="form-control" type="text" th:field="*{bs}" id="bs"
+							placeholder="Yrityksen toimiala"></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="form-group">
+				<a class="btn btn-outline-success" href="/"><i
+					class="bi bi-arrow-left-square-fill"></i>&nbsp;&nbsp;&nbsp;Takaisin&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+				<button type="submit" class="btn btn-outline-success">
+					<i class="bi bi-plus-square-fill"></i> &nbsp;&nbsp;&nbsp;Lisää uusi
+					käyttäjä&nbsp;&nbsp;&nbsp;
+				</button>
+			</div>
+		</form>
+	</div>
+	<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+</body>
+</html>
