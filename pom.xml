@@ -13,7 +13,7 @@
 	<artifactId>user-application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>user-application</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Codemen harjoitustehtävä</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
@@ -73,10 +73,29 @@
 			<artifactId>json</artifactId>
 			<version>20230618</version>
 		</dependency>
-
 	</dependencies>
 
 	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<release>17</release>
+						<archive>
+							<manifestFile>META-INF/MANIFEST.MF</manifestFile>
+							<manifest>
+								<addClasspath>false</addClasspath>
+								<mainClass>com.codemen.UserApplication</mainClass>
+							</manifest>
+						</archive>
+						<finalName>Codemen</finalName>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
 		<plugins>
 			<plugin>
 				<groupId>org.hibernate.orm.tooling</groupId>
