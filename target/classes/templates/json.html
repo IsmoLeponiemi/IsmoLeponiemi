@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+</head>
+<body>
+	<div class="container">
+		<h1>jSON Tiedosto</h1>
+		<a class="btn btn-outline-success" href="/"><i
+			class="bi bi-arrow-left-square-fill"></i>Takaisin</a>
+		<hr />
+		<table>
+			<tr>
+				<td>[</td>
+			</tr>
+			<tr th:each="item : ${jsonItems}">
+				<table>
+					<tr>
+						<td>{</td>
+					</tr>
+					<tr>
+						<td th:text="${item.id}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.name}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.username}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.email}"></td>
+					</tr>
+
+					<tr>
+						<td>"address": {</td>
+					</tr>
+					<tr>
+						<td th:text="${item.street}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.suite}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.city}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.zipcode}"></td>
+					</tr>
+
+					<tr>
+						<td>"geo": {</td>
+					</tr>
+					<tr>
+						<td th:text="${item.lat}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.lng}"></td>
+					</tr>
+					<tr>
+						<td>}</td>
+					</tr>
+					<tr>
+						<td>},</td>
+					</tr>
+
+					<tr>
+						<td th:text="${item.phone}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.website}"></td>
+					</tr>
+
+					<tr>
+						<td>"company": {</td>
+					</tr>
+					<tr>
+						<td th:text="${item.companyname}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.catchPhrase}"></td>
+					</tr>
+					<tr>
+						<td th:text="${item.bs}"></td>
+					</tr>
+					<tr>
+						<td>}</td>
+					</tr>
+
+					<tr>
+						<td th:text="${item.comma}"></td>
+					</tr>
+
+				</table>
+			</tr>
+			<tr>
+				<td>]</td>
+			</tr>
+		</table>
+
+	</div>
+	<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+</body>
+</html>

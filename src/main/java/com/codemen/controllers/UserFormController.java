@@ -18,6 +18,11 @@ public class UserFormController {
 	@Autowired
 	private UserItemService userItemService;
 
+	@PostMapping("/json")
+	public String showjSONForm(BindingResult result, Model model) {
+		return "json";
+	}
+
 	@GetMapping("/create-user")
 	public String showCreateForm(UserItem userItem) {
 		return "new-user-item";

@@ -1,74 +1,84 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}" />
 </head>
 <body>
-<div class="container">
-    <h1>Codemen harjoitustehtävä, Ismo Leponiemi</h1>
-    <hr/>
-    
-    <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-            <th></th>
-            <th>Id</th>
-            <th>Käyttäjän nimi</th>
-            <th>Käyttäjätunnus</th>
-            <th>Sähköposti</th>
-            <th>Puhelinnumero</th>
-            
-            <th>Katu</th>
-            <th>Asunto</th>
-            <th>Postinumero</th>
-            <th>Postitoimipaikka</th>
-            <th>Leveyspiiri</th>
-            <th>Pituuspiiri</th>
-            <th>web-osoite</th>
-            <th>Yrityksen nimi</th>
-            <th>Yrityksen iskulause</th>
-            <th>Yrityksen toimiala</th>
-        </tr>
-        </thead>
-        <tbody>
-         <tr th:each="item : ${userItems}">
-            <td>
-                <a class="btn btn-info" th:href="@{/edit/{id}(id=${item.id})}">
-                      <i class="bi bi-pencil-fill"></i>Muokkaa
-                </a>
-                <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
-                      <i class="bi bi-trash-fill"></i>&nbsp;&nbsp;Poista&nbsp;&nbsp;&nbsp;</a>
-             </td>
-            <td th:text="${item.id}"></td>
-            <td th:text="${item.name}"></td>
-            <td th:text="${item.username}"></td>
-            <td th:text="${item.email}"></td>
-            <td th:text="${item.phone}"></td>
-            
-            <td th:text="${item.street}"></td>
-            <td th:text="${item.suite}"></td>
-            <td th:text="${item.zipcode}"></td>
-            <td th:text="${item.city}"></td>
-            <td th:text="${item.lat}"></td>
-            <td th:text="${item.lng}"></td>
-            <td th:text="${item.website}"></td>
-            <td th:text="${item.companyname}"></td>
-            <td th:text="${item.catchPhrase}"></td>
-            <td th:text="${item.bs}"></td>
-            
-        </tr>
-        </tbody>
-    </table>
-    
-    
+	<div class="container">
+		<h1>Codemen harjoitustehtävä, Ismo Leponiemi</h1>
+		<!--  
+		<p>
+			<a class="btn btn-outline-success" href="/json"> <i
+				class="bi bi-plus-square-fill"></i>Avaa jSON Tiedosto
+			</a>
+		</p>
+	    -->
+		<a class="btn btn-outline-success" href="/json"> <i
+			class="bi bi-plus-square-fill"></i>Avaa jSON Tiedosto
+		</a>
 
-    <p><a class="btn btn-outline-success" href="/create-user">
-        <i class="bi bi-plus-square-fill"></i>&nbsp;&nbsp;&nbsp;Lisää uusi käyttäjä&nbsp;&nbsp;&nbsp;</a>
-    </p>
-</div>
-<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+		<hr />
+
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Id</th>
+					<th>Käyttäjän nimi</th>
+					<th>Käyttäjätunnus</th>
+					<th>Sähköposti</th>
+					<th>Puhelinnumero</th>
+
+					<th>Katu</th>
+					<th>Asunto</th>
+					<th>Postinumero</th>
+					<th>Postitoimipaikka</th>
+					<th>Leveyspiiri</th>
+					<th>Pituuspiiri</th>
+					<th>web-osoite</th>
+					<th>Yrityksen nimi</th>
+					<th>Yrityksen iskulause</th>
+					<th>Yrityksen toimiala</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="item : ${userItems}">
+					<td><a class="btn btn-info"
+						th:href="@{/edit/{id}(id=${item.id})}"> <i
+							class="bi bi-pencil-fill"></i>Muokkaa
+					</a> <a class="btn btn-danger" th:href="@{/delete/{id}(id=${item.id})}">
+							<i class="bi bi-trash-fill"></i>&nbsp;&nbsp;Poista&nbsp;&nbsp;&nbsp;
+					</a></td>
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.name}"></td>
+					<td th:text="${item.username}"></td>
+					<td th:text="${item.email}"></td>
+					<td th:text="${item.phone}"></td>
+					<td th:text="${item.street}"></td>
+					<td th:text="${item.suite}"></td>
+					<td th:text="${item.zipcode}"></td>
+					<td th:text="${item.city}"></td>
+					<td th:text="${item.lat}"></td>
+					<td th:text="${item.lng}"></td>
+					<td th:text="${item.website}"></td>
+					<td th:text="${item.companyname}"></td>
+					<td th:text="${item.catchPhrase}"></td>
+					<td th:text="${item.bs}"></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<p>
+			<a class="btn btn-outline-success" href="/create-user"> <i
+				class="bi bi-plus-square-fill"></i>&nbsp;&nbsp;&nbsp;Lisää uusi
+				käyttäjä&nbsp;&nbsp;&nbsp;
+			</a>
+		</p>
+	</div>
+	<script th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
 </body>
 </html>

@@ -172,4 +172,12 @@ public class UserItem implements Serializable {
 	public void setBs(String bs) {
 		this.bs = bs;
 	}
+
+	@Override
+	public String toString() {
+		return "UserItem [id=" + id + ", name=" + name + ", username=" + username + ", email=" + email + ", street="
+				+ street + ", suite=" + suite + ", city=" + city + ", zipcode=" + zipcode + ", lat=" + lat + ", lng="
+				+ lng + ", phone=" + phone + ", website=" + website + ", companyname=" + companyname + ", catchPhrase="
+				+ catchPhrase + ", bs=" + bs + "]";
+	}
 }
